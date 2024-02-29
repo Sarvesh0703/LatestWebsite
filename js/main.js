@@ -58,6 +58,23 @@ window.onresize = function () {
     }
 }
 
+$(window).scroll(function () {
+    if ($(this).scrollTop() > 50) {
+        $('#myBtn').fadeIn(200);
+    } else {
+        $('#myBtn').fadeOut(200);
+    }
+});
+$('#myBtn').click(function (event) {
+    event.preventDefault();
+    $('html, body').animate({ scrollTop: 0 }, 500);
+});
+
+function toggleNavbar(){
+    let navbar = document.querySelector('.navbar');
+    navbar.classList.toggle("navs")
+}
+
 $(document).ready(function() {
     $('.slick-slider').slick({
         infinite: true,
